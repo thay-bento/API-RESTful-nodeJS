@@ -2,17 +2,23 @@ const { set, get, del } = require("../redis");
 const { v4: uuidv4 } = require('uuid');
 
 exports.post = (req, res, next) =>{
-const { name, email, document } = req.body;
-
-const costumer = {
-    id: uuidv4(),
-    name: name,
-    email: email,
-    document : document
-}
-set(costumer.id,costumer)
+  const { name, email, document } = req.body;
   
-res.json({ costumer });
+  const costumer = {
+      id: uuidv4(),
+      name: name,
+      email: email,
+      document : document
+  }
+  set(costumer.id,costumer)
+    
+  res.json({ costumer });
+}
+
+exports.postCollection = (req, res, next) =>{
+const costumers = req.body;
+ // emconstrução...
+res.json({ costumers });
 }
 
 exports.get = async function (req, res, next) {
@@ -36,6 +42,7 @@ exports.put = (req, res, next) => {
   costumer.email = email;
   costumer.document = document;
 
+  set(costumer.id,costumer)
 
   res.json(costumer);
 }
