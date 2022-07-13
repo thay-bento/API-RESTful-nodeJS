@@ -1,0 +1,28 @@
+{
+  "name": "01.restful",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "ioredis": "^5.1.0",
+    "redis": "^4.2.0",
+    "uuid": "^8.3.2",
+    "uuidv4": "^6.2.13"
+  },
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "description": "## API",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocketseat-content/youtube-api-rest-restful.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/rocketseat-content/youtube-api-rest-restful/issues"
+  },
+  "homepage": "https://github.com/rocketseat-content/youtube-api-rest-restful#readme"
+}
