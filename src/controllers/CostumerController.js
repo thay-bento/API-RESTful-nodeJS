@@ -17,8 +17,21 @@ exports.post = (req, res, next) =>{
 
 exports.postCollection = (req, res, next) =>{
 const costumers = req.body;
- // emconstrução...
-res.json({ costumers });
+const collection = new Array();
+
+for (let i = 0; i < costumers.length; i++){
+    const id =  uuidv4();
+    const name = costumers[i].name;
+    const email = costumers[i].email;
+    const document = costumers[i].document;
+    
+    const costumer = {name, email, document}
+    collection[i] = {id, costumer}
+    set(id, costumer);
+}
+
+res.json({ collection });
+
 }
 
 exports.get = async function (req, res, next) {
