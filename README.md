@@ -3,7 +3,7 @@ Desenvolvimento de API RESTful em Javascript, utilizando docker container Redis.
 <div align="center">
     <img src="/.github/logo.png" width="400"/>  
     <h1></h1>
-    <p>Doarte | A arte de doar  </p>    
+    <p>Desafio NodeJs Backend </p>    
     <hr />    
     <p>
         <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript">
