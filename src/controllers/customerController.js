@@ -8,11 +8,11 @@ exports.post = (req, res, next) =>{
       id: uuidv4(),
       name: name,
       email: email,
-      document : document
+      document: document
   }
   
   set(customer.id,customer)
-  res.json( customer); 
+  res.json(customer); 
   
 }
 

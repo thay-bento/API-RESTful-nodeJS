@@ -1,15 +1,15 @@
 const CustomerController = require('../controllers/customerController');
 const cors =  require('cors');
 const validateDto = require('../middleware/validate-dto');
-const userSchema = require('../schema/customer');
+const customerSchema = require('../schema/customer');
+const customerCollectionSchema = require('../schema/customersCollection');
 
 module.exports = (app) => {
     app.use(cors());
-    app.post('/customers', cors(), validateDto(userSchema), CustomerController.post);
-    app.post('/customers/collection', cors(), CustomerController.postCollection);
+    app.post('/customers', cors(), validateDto(customerSchema), CustomerController.post);
     app.get('/customers/:id', cors(), CustomerController.get);
-    app.put('/customers/:id', cors(), validateDto(userSchema), CustomerController.put);
+    app.put('/customers/:id', cors(), validateDto(customerSchema), CustomerController.put);
     app.delete('/customers/:id', cors(), CustomerController.delete);
 
-    
+    app.post('/customers/collection', cors(), validateDto(customerCollectionSchema), CustomerController.postCollection);
 }
